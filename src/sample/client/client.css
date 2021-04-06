@@ -1,0 +1,51 @@
+.root {
+    -fx-background-color: #232F34;
+}
+.split-pane {
+    -fx-box-border: transparent;
+}
+.split-pane-divider {
+    -fx-background-color: #DBC7A6;
+    -fx-padding: 0 2 0 2;
+}
+.list-view {
+    -fx-font-size: 18px;
+}
+/* List-cell is focused and selected */
+.list-view:focused .list-cell:filled:focused:selected {
+    -fx-text-fill: #232F34;
+}
+/* List-cell is focused, selected and mouse hovered */
+.list-view:focused .list-cell:filled:focused:selected:hover {
+    -fx-text-fill: yellow;
+}
+.list-view .list-cell:even {
+    -fx-text-fill: #EEEBDD;
+}
+.list-view .list-cell:odd {
+    -fx-text-fill: #ECECEC;
+}
+.clientView {
+    -fx-padding: 10px;
+    -fx-control-inner-background: #4A6572;
+    -fx-selection-bar: F9AA33;
+    -fx-selection-bar-non-focused: transparent;
+}
+.serverView {
+    -fx-padding: 10px;
+    -fx-control-inner-background: #344955;
+    -fx-selection-bar: F9AA33;
+    -fx-selection-bar-non-focused: transparent;
+}
+.button {
+    -fx-background-color: #F9AA33;
+    -fx-font-size: 20px;
+    -fx-label-padding: 5 40 5 40;
+    -fx-text-fill: white;
+}
+.header {
+    -fx-fill: #DBC7A6;
+    -fx-font-weight: bold;
+    -fx-underline: true;
+    -fx-font-size: 24px;
+}
