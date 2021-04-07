@@ -9,13 +9,23 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import java.net.URL?>
-
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
 <AnchorPane fx:id="anchorPane" styleClass="root" fx:controller="sample.client.ClientController" xmlns:fx="http://javafx.com/fxml">
     <BorderPane styleClass="root" prefWidth="800" prefHeight="700" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.leftAnchor="10">
+        <MenuBar>   <!-- This kept out of the scene on purpose, required for Mnemonics (Keyboard Shortcuts) -->
+            <menus>
+                <Menu>
+                    <MenuItem onAction="#exit" accelerator="CTRL+W"/>
+                    <MenuItem onAction="#downloadButton" accelerator="CTRL+D"/>
+                    <MenuItem onAction="#uploadButton" accelerator="CTRL+E"/>
+                </Menu>
+            </menus>
+        </MenuBar>
         <top>
             <VBox AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
-                <HBox spacing="20">
+                <HBox spacing="25">
                     <padding>
                         <Insets top="30" bottom="15" left="30" right="10"/>
                     </padding>
@@ -33,10 +43,8 @@
         </top>
         <center>
             <SplitPane dividerPositions="0.5">
-                <ListView fx:id="clientView" styleClass="clientView">
-                </ListView>
-                <ListView fx:id="serverView" styleClass="serverView">
-                </ListView>
+                <ListView fx:id="clientView" styleClass="clientView"/>
+                <ListView fx:id="serverView" styleClass="serverView"/>
             </SplitPane>
         </center>
     </BorderPane>

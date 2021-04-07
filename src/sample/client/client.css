@@ -39,9 +39,10 @@
 }
 .button {
     -fx-background-color: #F9AA33;
-    -fx-font-size: 20px;
-    -fx-label-padding: 5 40 5 40;
-    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-label-padding: 5 30 5 30;
+    -fx-text-fill: lightyellow;
 }
 .header {
     -fx-fill: #DBC7A6;

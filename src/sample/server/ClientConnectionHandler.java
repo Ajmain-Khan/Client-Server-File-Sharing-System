@@ -5,12 +5,11 @@ import java.net.Socket;
 import java.net.SocketAddress;
 
 public class ClientConnectionHandler implements Runnable{
-    private File serverFiles = new File("resources/server");
-    private File clientFiles = new File("resources/client");
+    private final File serverFiles = new File("resources/server");
+    private final File clientFiles = new File("resources/client");
     private Socket socket;
     private SocketAddress socketAddress;
-
-    public final static int fileSize = 7000000; // File size (larger on purpose)
+    public final static int fileSize = 5000000; // File size with overhead
 
     public ClientConnectionHandler(Socket socket) {
         this.socket = socket;
@@ -20,16 +19,15 @@ public class ClientConnectionHandler implements Runnable{
     public void transferFile(File path) {
         try {
             DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
-            String fileName = dataInputStream.readUTF();
-            OutputStream outputStream = new FileOutputStream((path + "/" + fileName));
+            OutputStream outputStream = new FileOutputStream((path + "/" + dataInputStream.readUTF()));
 
-            int bytes;
             long size = dataInputStream.readLong();
             byte[] bytesArray = new byte[fileSize];
 
-            while (size > 0 && (bytes = dataInputStream.read(bytesArray, 0, (int) Math.min(bytesArray.length, size))) > 1) {
-                outputStream.write(bytesArray, 0, bytes);
-                size -= bytes;
+            int bytesRead;
+            while (size > 0 && (bytesRead = dataInputStream.read(bytesArray, 0, (int) Math.min(bytesArray.length, size))) > 1) {
+                outputStream.write(bytesArray, 0, bytesRead);
+                size -= bytesRead;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -39,9 +37,9 @@ public class ClientConnectionHandler implements Runnable{
     @Override
     public void run(){
         try {
-            PrintWriter printWriter = new PrintWriter(socket.getOutputStream(), true);
-            printWriter.println(this.serverFiles.getName());
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
+
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 if (line.equals("Download")) {

@@ -11,7 +11,6 @@ public class Server {
         try {
             this.SERVER_SOCKET = new ServerSocket(port);
             System.out.println("File Server running\nListening to port " + port);
-
         } catch (Exception e) {
             e.printStackTrace();
         }

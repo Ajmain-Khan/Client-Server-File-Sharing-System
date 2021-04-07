@@ -1,18 +1,22 @@
-#Client-Server File Sharing System
+# Client-Server File Sharing System
 
-###Description:
+### Description:
 Clients connect to a central server, which responds to a single client command, and then disconnects.
 Every command issued by a client will re-connect to the server before sending the command.
 
 Client connections are handled, each with a separate thread.
 
-###Improvements:
+### Improvements:
 
 ---
 * CSS Styling
-* Adjustable list width (drag middle bar)
-*
-###Instructions:
+* Adjustable directory width (drag middle bar)
+* Mnemonic Parsing (Keyboard Shortcuts)
+   * Exit: CTRL + W
+   * Download: CTRL + D
+   * Upload: CTRL + E
+* Multiple file upload/download (auto-refresh scene)
+### Instructions:
 
 ---
 1. Clone the repository
@@ -28,4 +32,8 @@ Client connections are handled, each with a separate thread.
     1. Run the Server first
     2. Followed by Main
 
-###By: Ajmain Khan
+#### Known Issues:
+
+- Files tend to fail to upload/download, works after multiple tries.
+
+### By: Ajmain Khan
