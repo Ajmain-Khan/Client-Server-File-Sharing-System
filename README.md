@@ -19,8 +19,7 @@ ___
 ### Screenshots
 ___
 ![UI Image 1](screenshots/fileshare_ClientUI.png)
-![UI Image 1 RAW](https://github.com/Ajmain-Khan/CSCI2020U-assignment2/blob/main/screenshots/fileshare_ClientUI?raw=true")
-![UI Image 2](https://github.com/Ajmain-Khan/CSCI2020U-assignment2/tree/main/screenshots/fileshare_ClientUI2.png)
+![UI Image 2](screenshots/fileshare_ClientUI2.png)
 
 ### Instructions:
 ___
