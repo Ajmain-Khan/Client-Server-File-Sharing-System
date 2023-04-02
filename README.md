@@ -1,12 +1,15 @@
 # Client-Server File Sharing System
 
-### Description:
+## Description:
+### An application for sharing files between a server and client
 Clients connect to a central server, which responds to a single client command, and then disconnects.
 Every command issued by a client will re-connect to the server before sending the command.
 
 Client connections are handled, each with a separate thread.
+___
+![UI Image 2](screenshots/fileshare_ClientUI_v2.png)
 
-### Improvements:
+## UI and System Features:
 ___
 * CSS Styling
 * Adjustable directory width (drag middle bar)
@@ -15,13 +18,16 @@ ___
    * Download: CTRL + D
    * Upload: CTRL + E
 * Multiple file upload/download (auto-refresh scene)
-
-### Screenshots
+##### V2 UI Updates
+* Allows subdirectories to be shown
+* Icons for folders and files
+* Shows file size (B, kB, MB, GB, TB, PB, EB)
+* Allows all file types to be uploaded and downloaded (text, exe, HTML, images, etc.)
+* Shows what file is selected via a Label
 ___
-![UI Image 1](screenshots/fileshare_ClientUI.png)
-![UI Image 2](screenshots/fileshare_ClientUI2.png)
 
-### Instructions:
+
+## Execution Instructions:
 ___
 *Prerequisites: JDK 15+, JAVAFX 15+*
 1. Clone the repository
@@ -36,9 +42,5 @@ ___
 5. Program should now run
     1. Run the Server first
     2. Followed by Main
-
-#### Known Issues:
-
-- Files tend to fail to upload/download, works after multiple tries.
 
 ### By: Ajmain Khan
